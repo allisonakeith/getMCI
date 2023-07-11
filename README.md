@@ -1,7 +1,8 @@
 # getMCI
 This code uses methods described in Pallotti 2015 to extract the Morphological Complexity Index from texts. Original code is for English texts and was modified for use on Spanish (MCI_es)and German(MCI_de).
 
-#Morphological Complexity Index
+## Morphological Complexity Index
+
 Brezina and Pallotti (2019) invented the Morphological Complexity Index (MCI), a measure of morphological complexity that describes the average verbal inflectional diversity (ex. talk, talking, talks). The MCI is calculated by extracting the inflectional morphemes of each word class. Then 100 random samples of 10 morphemes are drawn, without replacement. The mean within-subset variety is the mean number of unique forms in each random sample of size 10. The maximum within-subset variety value would be 10 if for each 100 samples, 10 unique morphemes were drawn. The minimum would be 1, if for each 100 samples there was only 1 unique morpheme used. Therefore, texts with a large variety of differently inflected words score higher in within-subject variety compared to texts with many repeating morphemes. The between subset diversity is calculated by pairing each of the 100 subsets, and calculating the number of unique morphemes in each pair. The minimum number would be 20, if each of the paired samples had 10 unique morphemes. The minimum would be 0 if the samples had no unique morphemes between them. This means that texts with a diversity of morphemes, as well as many repeating morphemes score higher in between subset diversity. Therefore, longer texts are likely to score higher in between subset diversity. The between subset diversity of the text is divided by two in order to combat length effects.
 
 MCI = withinsubsetvariety + (betweensubsetdiversity/2) − 1 (2)
